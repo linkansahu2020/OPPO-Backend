@@ -10,6 +10,10 @@ const usersController = require('./controllers/user.controller')
 app.use('/products',productsController)
 app.use('/users',usersController)
 
+app.get("",(req,res)=>{
+    return res.send("Hello")
+})
+
 app.listen(8080,async()=>{
     try{
         await connect()
