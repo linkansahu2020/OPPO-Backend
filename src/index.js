@@ -1,5 +1,6 @@
 const express = require('express')
 const connect = require('./configs/db')
+require('dotenv').config();
 
 const app = express()
 app.use(express.json())
@@ -14,7 +15,9 @@ app.get("",(req,res)=>{
     return res.send("Hello")
 })
 
-app.listen(8080,async()=>{
+const port = process.env.PORT || 2345
+
+app.listen(port,async()=>{
     try{
         await connect()
         console.log("My port is 8080")
