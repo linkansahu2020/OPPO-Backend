@@ -5,8 +5,10 @@ const app = express()
 app.use(express.json())
 
 const productsController = require('./controllers/product.controller')
+const usersController = require('./controllers/user.controller')
 
 app.use('/products',productsController)
+app.use('/users',usersController)
 
 app.listen(8080,async()=>{
     try{
