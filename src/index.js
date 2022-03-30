@@ -9,9 +9,11 @@ app.use(cors())
 
 const productsController = require('./controllers/product.controller')
 const usersController = require('./controllers/user.controller')
+const addressController = require('./controllers/address.controller')
 
 app.use('/products',productsController)
 app.use('/users',usersController)
+app.use('/address',addressController)
 
 app.get("",(req,res)=>{
     return res.send("Hello")
