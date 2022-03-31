@@ -10,6 +10,14 @@ router.get('',async(req,res)=>{
         return res.status(501).send({Error:err.message})
     }
 })
+router.get('/:id',async(req,res)=>{
+    try{
+        const product = await Product.findById(req.params.id);
+        return res.status(201).send(product)
+    } catch(err){
+        return res.status(501).send({Error:err.message})
+    }
+})
 router.get('/:category',async(req,res)=>{
     try{
         const products = await Product.find({category:req.params.category}).lean().exec()
