@@ -10,7 +10,7 @@ router.get('',async(req,res)=>{
         return res.status(501).send({Error:err.message})
     }
 })
-router.get('/:id',async(req,res)=>{
+router.get('/:category/:id',async(req,res)=>{
     try{
         const product = await Product.findById(req.params.id);
         return res.status(201).send(product)
