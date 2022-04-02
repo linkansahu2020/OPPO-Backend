@@ -18,7 +18,7 @@ router.get('/:category/:id',async(req,res)=>{
         return res.status(501).send({Error:err.message})
     }
 })
-router.get('/:category/:model',async(req,res)=>{
+router.get('/:category/model/:model',async(req,res)=>{
     try{
         const products = await Product.find({model:req.params.model});
         return res.status(201).send(products)
